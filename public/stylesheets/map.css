@@ -1,4 +1,37 @@
-/* 수정된 CSS 코드 */
+
+
+.infowindow-content {
+    padding: 35px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.place-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.address {
+    margin-bottom: 10px;
+}
+
+.map-button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/*
+30줄까지 infowindow css
+*/
 
 .info .body {
     position: relative;

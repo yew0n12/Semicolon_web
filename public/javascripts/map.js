@@ -22,13 +22,18 @@ searchPlaces();
 function searchPlaces() {
     let keyword = $("#keyword").val(); // 사용자가 입력한 키워드.
     const jnuCoords = [
-        new kakao.maps.LatLng(35.178440,126.905300),
-        new kakao.maps.LatLng(35.181214,126.904628),
-        new kakao.maps.LatLng(35.181946,126.909889),
-        new kakao.maps.LatLng(35.177751,126,912076),
-        new kakao.maps.LatLng(35.174035,126,912535),
-        new kakao.maps.LatLng(35.171951,126,898567),
-        new kakao.maps.LatLng(35.176691,126,899143)
+        new kakao.maps.LatLng(35.178357,126.903509),
+        new kakao.maps.LatLng(35.180549,126.904003),
+        new kakao.maps.LatLng(35.182095,126.909447),
+        new kakao.maps.LatLng(35.181376,126.911185),
+        new kakao.maps.LatLng(35.179324,126.911893),
+        new kakao.maps.LatLng(35.174027,126.912709),
+        new kakao.maps.LatLng(35.172554,126.908997),
+        new kakao.maps.LatLng(35.172308,126.904619),
+        new kakao.maps.LatLng(35.171484,126.899341),
+        new kakao.maps.LatLng(35.173027,126.896122),
+        new kakao.maps.LatLng(35.176886,126.899019),
+        new kakao.maps.LatLng(35.178324,126.903418)
     ];
     // 다각형 영역을 포함하는 경계 상자 생성
     const bounds = new kakao.maps.LatLngBounds();
@@ -83,31 +88,8 @@ function placesSearchDB(data,status) {
         return;
     }
 }
-//--
-
-/*
-function filterPlacesByKeyword(data) {
-    // 건물 키워드 목록
-    let buildingKeywords = ["공과대학", "공1", "공2", "공3", "공4", "공5", "공6"]; // 예시
-    // 필터링된 결과를 담을 배열
-    let filteredData = [];
-    // 각 장소에 대해 건물 키워드가 포함되어 있는지 확인하고 필터링
-    for (let i = 0; i < data.length; i++) {
-        let placeName = data[i].place_name;
-        for (let j = 0; j < buildingKeywords.length; j++) {
-            if (placeName.includes(buildingKeywords[j])) {
-                filteredData.push(data[i]);
-                break;
-            }
-        }
-    }
-    return filteredData;
-}
-*/
-// 필터 키워드 검색 함수 오류로 skip
 
 
-//--
 function displayPlaces(data) {
     let listEl = document.getElementById("placesList");
     let bounds = new kakao.maps.LatLngBounds();
@@ -120,8 +102,9 @@ function displayPlaces(data) {
         let lng = data[i].x;
         let address_name = data[i]["address_name"];
         let place_name = data[i]["place_name"];
-
-        const placePostion = new kakao.maps.LatLng(lat,lng);
+        
+        //placePostion => 좌표값 같은건데
+        const placePostion = new kakao.maps.LatLng(lat,lng); 
         bounds.extend(placePostion);
 
         let marker = new kakao.maps.Marker({
@@ -162,23 +145,43 @@ function displayPlaces(data) {
     map.setBounds(bounds);
 }
 
-function displayInfowindow(marker,place_name,address_name,lat,lng){
+function displayInfowindow(marker, place_name, address_name, lat, lng) {
     let content = `
-    <div style ="padding:25px;">
-        ${place_name}<br>
-        ${address_name}<br>
-        <button onClick="showIndoorMap('${place_name}','${address_name}',${lat},${lng});">지도보기</button>
-    </div> 
+        <div class="infowindow-content">
+            <div class="place-name">${place_name}</div>
+            <div class="address">${address_name}</div>
+            <button class="map-button" id="showIndoorButton">지도보기</button> 
+        </div> 
     `;
     map.panTo(marker.getPosition());
     map.setLevel(2, { animate: { duration: 400 } }); // 클릭시 검색된 마커로 지도 이동
     infowindow.setContent(content);
-    infowindow.open(map,marker);
+    infowindow.open(map, marker);
+
+    // "지도보기" 버튼에 클릭 이벤트 리스너 추가
+    var showIndoorButton = document.getElementById('showIndoorButton');
+    showIndoorButton.addEventListener('click', function() {
+        // 실내지도 보기 함수 호출
+        showIndoorMap(place_name, address_name, lat, lng);
+    });
 }
 
+
 function showIndoorMap(place_name, address_name, lat, lng) {
+    
+    let screenWidth = window.screen.width;
+    let screenHeight = window.screen.height;
+
+    // 팝업 창 크기 설정
+    let popupWidth = 400;
+    let popupHeight = 600;
+
+    // 팝업 창이 뜨는 위치 계산
+    let left = (screenWidth - popupWidth) / 2;
+    let top = (screenHeight - popupHeight) / 2;
+
     // 새로운 팝업 창을 열기
-    let popup = window.open("", "_blank", "width=600,height=400");
+    let popup = window.open("", "_blank", "width=600,height=400,left=" + left + ",top=" + top);
 
     // 팝업 창에 실내지도 보여주기
     popup.document.write(`
@@ -188,24 +191,32 @@ function showIndoorMap(place_name, address_name, lat, lng) {
             <meta charset="utf-8">
             <title>실내지도</title>
             <style>
-                #map { width: 100%; height: 100%; }
+                #map { width: 100%; height: 80%; }
+                .floor-button { margin: 10px; padding: 10px 20px; font-size: 30px; }
+                #buttons { position: absolute; top: 10px; left: 10px; }
             </style>
         </head>
         <body>
             <div id="map"></div>
+            <div id="buttons">
+                <button class="floor-button" onclick="showFloorImage('images/AI/AIB1.png')">B1층</button>
+                <button class="floor-button" onclick="showFloorImage('images/AI/AI1.png')">1층</button>
+                <button class="floor-button" onclick="showFloorImage('images/AI/AI2.png')">2층</button>
+                <button class="floor-button" onclick="showFloorImage('images/AI/AI3.png')">3층</button>
+                <button class="floor-button" onclick="showFloorImage('images/AI/AI4.png')">4층</button>
+            </div>
             <script>
-                // 카카오 지도 API를 사용하여 지도 표시
-                var mapContainer = document.getElementById("map");
-                var mapOption = {
-                    center: new kakao.maps.LatLng(${lat}, ${lng}),
-                    level: 2
-                };
-                var map = new kakao.maps.Map(mapContainer, mapOption);
+                function showFloorImage(imagePath) {
+                    // 이미지 표시
+                    document.getElementById("map").innerHTML = '<img src="' + imagePath + '" alt="Floor Map" style="width: 100%; height: auto;">';
+                    // 이미지 크기 조절
+            }
             </script>
-        </body>
-        </html>
+    </body>
+    </html>
+    
     `);
-
+    
     // 팝업 창 제목 설정
     popup.document.title = place_name;
 }

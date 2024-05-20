@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const app = express()
+const indexController = require('../src/controllers/indexController');
+const { logger } = require("../config/winston"); // log
 
 app.get('/',(req,res) => {
   res.send('server on')
@@ -20,4 +22,10 @@ router.get('/map', function(req, res, next) {
   res.render('map');
 });
 
+
+router.get('/images', indexController.readImages);
+
+
 module.exports = router;
+
+
