@@ -1,8 +1,8 @@
-<h1>Semicoln;</h1>
+<h1>Semicolon;</h1>
 <br>
 
 
-## 팀 정보
+## Project Member
 <table width="800">
 <thead>
 <tr>
