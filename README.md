@@ -14,31 +14,31 @@
 
 <tbody>
 <tr>
-<td width="100" align="center">곽병혁</td>
-<td width="250" align="center">UI/UX, 풀스택, 발표(시연) </td>
+<td width="100" align="center">나예원</td>
+<td width="250" align="center">기획, BE </td>
 <td width="150" align="center">
-  <a href="https://github.com/Aiden-Kwak" target="_blank"><img src="https://img.shields.io/badge/Aiden--Kwak-655ced?style=social&logo=github"/></a></td>
+  <a href="" target="_blank"><img src=""/></a></td>
 </tr>
 	
 <tr>
-<td width="100" align="center">김재윤</td>
-<td width="250" align="center">LLM, BE</td>
+<td width="100" align="center">김재원</td>
+<td width="250" align="center">FE</td>
 <td width="150" align="center">	
-	<a href="https://github.com/1MTW" target="_blank"><img src="https://img.shields.io/badge/1MTW-655ced?style=social&logo=github"/></a>
+	<a href="" target="_blank"><img src=""/></a></td>
 </td>
 </tr>
 
 <tr>
-<td width="100" align="center">박은수</td>
-<td width="250" align="center">기획, UI/UX, 발표</td>
+<td width="100" align="center">박현민</td>
+<td width="250" align="center">BE</td>
 <td width="150" align="center">	
-	<a href="https://github.com/bageunsoo" target="_blank"><img src="https://img.shields.io/badge/bageunsoo-655ced?style=social&logo=github"/></a>
+	<a href="" target="_blank"><img src=""/></a></td>
 </td>
 </tr>
 	
 <tr>
-<td width="100" align="center">오진우</td>
-<td width="250" align="center">UI/UX, FE</td>
+<td width="100" align="center">차희준</td>
+<td width="250" align="center">FE</td>
 <td width="150" align="center">	
 	<a href="" target="_blank"><img src=""/></a>
 </td>
