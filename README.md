@@ -21,7 +21,7 @@
 </tr>
 	
 <tr>
-<td width="100" align="center">김재원</td>
+<td width="100" align="center">최재원</td>
 <td width="250" align="center">FE</td>
 <td width="150" align="center">	
 	<a href="" target="_blank"><img src=""/></a></td>
