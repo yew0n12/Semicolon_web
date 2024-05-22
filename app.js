@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -19,6 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// 정적 파일 제공 경로 설정 (로컬 환경과 서버 환경 모두에서 동일하게 사용 가능하도록 설정)
+app.use('/images', express.static(path.join(__dirname, '../image')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

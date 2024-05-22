@@ -1,10 +1,13 @@
 const { pool } = require("../../config/database");
 
-exports.readImages = async function (connection) {
-    const Query = `SELECT * FROM buildings;`;
-    const Params = [];
+exports.readImages = async function (connection,placeName) {
+    const Query = `SELECT image_path FROM buildings WHERE placeName = ?;`;
+    const Params = [placeName.trim()];  // placeName에서 공백을 제거
 
-    const [rows] = await connection.query(Query, Params); // query 메소드가 async/await를 지원하는지 확인하세요
+    console.log('Executing SQL Query:', Query);
+    console.log('With Params:', Params);
+
+    const [rows] = await connection.query(Query, Params); //
 
     return rows;
 };

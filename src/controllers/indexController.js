@@ -1,16 +1,39 @@
 const indexDao = require('../Dao/indexDao');
 const { pool } = require("../../config/database");
-const winston = require('../../config/winston');
+const { logger } = require("../../config/winston");
 
 
 
 exports.readImages = async function (req, res) {
+    const{ placeName } = req.query;
+    console.log(placeName);
+
+    if (!placeName) {
+        logger.error('placeName is not defined');
+        return res.status(400).send({
+            isSuccess: false,
+            code: 400,
+            message: "placeName is required",
+        });
+    }
+
     try {
-        console.log('Connecting to the database...');
         const connection = await pool.getConnection(async (conn) => conn);
-        console.log('Connecting to the database...22');
         try {
-            const rows = await indexDao.readImages(connection);
+            console.log("Database connection established");
+            let [rows] = await indexDao.readImages(connection,placeName);
+            console.log("Query executed, rows:", rows);
+
+            if (!Array.isArray(rows)) {
+                console.log("Rows is not an array, converting to array");
+                rows = [rows];
+            }
+
+            if (rows.length === 0) {
+                console.log("No images found for placeName:", placeName);
+            }
+
+            console.log("이미지 목록 요청 성공");
 
             return res.send({
                 result: rows,

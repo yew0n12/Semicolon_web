@@ -162,64 +162,93 @@ function displayInfowindow(marker, place_name, address_name, lat, lng) {
     var showIndoorButton = document.getElementById('showIndoorButton');
     showIndoorButton.addEventListener('click', function() {
         // 실내지도 보기 함수 호출
-        showIndoorMap(place_name, address_name, lat, lng);
+        showIndoorMap(place_name);
     });
 }
 
 
-function showIndoorMap(place_name, address_name, lat, lng) {
-    
+function showIndoorMap(place_name) {
     let screenWidth = window.screen.width;
     let screenHeight = window.screen.height;
 
-    // 팝업 창 크기 설정
-    let popupWidth = 400;
-    let popupHeight = 600;
+    let popupWidth = 600;
+    let popupHeight = 800;
 
-    // 팝업 창이 뜨는 위치 계산
     let left = (screenWidth - popupWidth) / 2;
     let top = (screenHeight - popupHeight) / 2;
 
-    // 새로운 팝업 창을 열기
     let popup = window.open("", "_blank", "width=600,height=400,left=" + left + ",top=" + top);
 
-    // 팝업 창에 실내지도 보여주기
     popup.document.write(`
         <!DOCTYPE html>
         <html>
         <head>
             <meta charset="utf-8">
-            <title>실내지도</title>
+            <title>${place_name}</title>
             <style>
-                #map { width: 100%; height: 80%; }
-                .floor-button { margin: 10px; padding: 10px 20px; font-size: 30px; }
-                #buttons { position: absolute; top: 10px; left: 10px; }
+                #map { width: 100%; height: 100%; }
+                #log { color: red; }
             </style>
         </head>
         <body>
             <div id="map"></div>
-            <div id="buttons">
-                <button class="floor-button" onclick="showFloorImage('images/AI/AIB1.png')">B1층</button>
-                <button class="floor-button" onclick="showFloorImage('images/AI/AI1.png')">1층</button>
-                <button class="floor-button" onclick="showFloorImage('images/AI/AI2.png')">2층</button>
-                <button class="floor-button" onclick="showFloorImage('images/AI/AI3.png')">3층</button>
-                <button class="floor-button" onclick="showFloorImage('images/AI/AI4.png')">4층</button>
-            </div>
-            <script>
-                function showFloorImage(imagePath) {
-                    // 이미지 표시
-                    document.getElementById("map").innerHTML = '<img src="' + imagePath + '" alt="Floor Map" style="width: 100%; height: auto;">';
-                    // 이미지 크기 조절
-            }
-            </script>
-    </body>
-    </html>
-    
+            <div id="log"></div>
+        </body>
+        </html>
     `);
-    
-    // 팝업 창 제목 설정
+
     popup.document.title = place_name;
+
+    const script = popup.document.createElement('script');
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.1/axios.min.js";
+    script.integrity = "sha512-w9PRLSWbo+Yqin/AzSMGoP+qe8UF1njFtd1rEnR58Xv2GEJNEa6O6Bv53mkPbNyAwGCn1HVt1OOvd5i+E55t+w==";
+    script.crossOrigin = "anonymous";
+    script.referrerPolicy = "no-referrer";
+
+    
+
+    script.onload = function() {
+        popup.document.write(`
+            <script>
+                async function getImages(placeName) {
+                    try {
+                        const response = await axios.get('/images', { params: { placeName } });
+                        return response.data.result;
+                    } catch (error) {
+                        console.error('Error fetching images:', error);
+                        return [];
+                    }
+                }
+
+                function showImage(imagePath) {
+                    const imagePathRelative = imagePath.replace('/home/ubuntu/image/', '/images/');
+                    document.getElementById("log").innerText = 'Transformed imagePath: ' + imagePathRelative; // 화면에 로그 표시
+                    document.getElementById("map").innerHTML = '<img src="' + imagePathRelative + '" alt="Map Image" style="width: 100%; height: auto;">';
+                }
+
+                async function init() {
+                    const placeName = "${place_name}";
+                    const images = await getImages(placeName);
+
+                    if (images.length > 0) {
+                        showImage(images[0].image_path);
+                    } else {
+                        document.getElementById("map").innerText = "No images available.";
+                    }
+                }
+
+                init();
+            </script>
+        `);
+    };
+
+    popup.document.head.appendChild(script);
 }
+
+
+
+//---------------------------------------------------------------------------------------------------
+
 
 function removeAllChildNodes(el) {
     while (el.hasChildNodes()) {
