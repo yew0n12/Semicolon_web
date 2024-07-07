@@ -1,0 +1,12 @@
+# 로그 파일
+log/*.log
+log/*.json
+
+# 특정 디렉토리 제외
+node_modules/
+dist/
+
+# 기타 무시할 파일
+*.tmp
+*.swp
+.DS_Store
