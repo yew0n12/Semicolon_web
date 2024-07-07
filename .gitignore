@@ -2,11 +2,18 @@
 log/*.log
 log/*.json
 
-# 특정 디렉토리 제외
+
 node_modules/
 dist/
 
-# 기타 무시할 파일
+
 *.tmp
 *.swp
 .DS_Store
+
+# 보안 파일 
+mapKey.pem
+mapKey.ppk
+dataTABLE1.mwb
+test2.pem
+test2.ppk
