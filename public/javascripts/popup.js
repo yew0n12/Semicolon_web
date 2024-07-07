@@ -31,7 +31,7 @@ function showIndoorMap(place_name) {
     let left = (screenWidth - popupWidth) / 2;
     let top = (screenHeight - popupHeight) / 2;
 
-    let popup = window.open("", "_blank", "width=600,height=400,left=" + left + ",top=" + top);
+    let popup = window.open("", "_blank", "width=600,height=800,left=" + left + ",top=" + top);
 
     popup.document.write(`
         <!DOCTYPE html>
@@ -40,13 +40,14 @@ function showIndoorMap(place_name) {
             <meta charset="utf-8">
             <title>${place_name}</title>
             <style>
-                #map { width: 100%; height: 100%; }
-                #log { color: red; }
+                #map { width: 100%; height: 90%; }
+                #buttons { text-align: center; padding: 10px; }
+                .floor-button { margin: 0 5px; padding: 5px 10px; cursor: pointer; }
             </style>
         </head>
         <body>
             <div id="map"></div>
-            <div id="log"></div>
+            <div id="buttons"></div>
         </body>
         </html>
     `);
@@ -74,8 +75,19 @@ function showIndoorMap(place_name) {
 
                 function showImage(imagePath) {
                     const imagePathRelative = imagePath.replace('/home/ubuntu/image/', '/images/');
-                    document.getElementById("log").innerText = 'Transformed imagePath: ' + imagePathRelative; // 화면에 로그 표시
                     document.getElementById("map").innerHTML = '<img src="' + imagePathRelative + '" alt="Map Image" style="width: 100%; height: auto;">';
+                }
+
+                function createFloorButtons(images) {
+                    const buttonsContainer = document.getElementById('buttons');
+                    buttonsContainer.innerHTML = '';
+                    images.forEach(image => {
+                        const button = document.createElement('button');
+                        button.className = 'floor-button';
+                        button.innerText = "Floor " + image.floor;
+                        button.onclick = () => showImage(image.image_path);
+                        buttonsContainer.appendChild(button);
+                    });
                 }
 
                 async function init() {
@@ -83,7 +95,8 @@ function showIndoorMap(place_name) {
                     const images = await getImages(placeName);
 
                     if (images.length > 0) {
-                        showImage(images[0].image_path);
+                        createFloorButtons(images);
+                        showImage(images[0].image_path); // 기본적으로 첫 번째 층 이미지 표시
                     } else {
                         document.getElementById("map").innerText = "No images available.";
                     }
