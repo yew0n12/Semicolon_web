@@ -81,7 +81,10 @@ function showIndoorMap(place_name) {
 
                     if (images.length > 0) {
                         createFloorButtons(images);
-                        showImage(images[0].image_path); // 기본적으로 첫 번째 층 이미지 표시
+                        for(let i=0;i<images.length;i++){
+                            showImage(images[i].image_path);
+                        }
+                         // 기본적으로 첫 번째 층 이미지 표시
                     } else {
                         document.getElementById("map").innerText = "No images available.";
                     }
