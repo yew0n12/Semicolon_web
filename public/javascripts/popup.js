@@ -80,10 +80,8 @@ function showIndoorMap(place_name) {
                     const images = await getImages(placeName);
 
                     if (images.length > 0) {
-                        for(let i=0;i<images.floor;i++){
-                            showImage(images[i].image_path);
-                            createFloorButtons(images);
-                        }
+                        showImage(images[i].image_path);
+                        createFloorButtons(images);
                          // 기본적으로 첫 번째 층 이미지 표시
                     } else {
                         document.getElementById("map").innerText = "No images available.";
