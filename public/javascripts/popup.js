@@ -1,5 +1,3 @@
-// popup.js
-
 function displayInfowindow(marker, place_name, address_name, lat, lng) {
     let content = `
         <div class="infowindow-content">
@@ -48,20 +46,7 @@ function showIndoorMap(place_name) {
         <body>
             <div id="map"></div>
             <div id="buttons"></div>
-        </body>
-        </html>
-    `);
-
-    popup.document.title = place_name;
-
-    const script = popup.document.createElement('script');
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.1/axios.min.js";
-    script.integrity = "sha512-w9PRLSWbo+Yqin/AzSMGoP+qe8UF1njFtd1rEnR58Xv2GEJNEa6O6Bv53mkPbNyAwGCn1HVt1OOvd5i+E55t+w==";
-    script.crossOrigin = "anonymous";
-    script.referrerPolicy = "no-referrer";
-
-    script.onload = function() {
-        popup.document.write(`
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.1/axios.min.js" integrity="sha512-w9PRLSWbo+Yqin/AzSMGoP+qe8UF1njFtd1rEnR58Xv2GEJNEa6O6Bv53mkPbNyAwGCn1HVt1OOvd5i+E55t+w==" crossorigin="anonymous" referrerPolicy="no-referrer"></script>
             <script>
                 async function getImages(placeName) {
                     try {
@@ -104,8 +89,7 @@ function showIndoorMap(place_name) {
 
                 init();
             </script>
-        `);
-    };
-
-    popup.document.head.appendChild(script);
+        </body>
+        </html>
+    `);
 }
