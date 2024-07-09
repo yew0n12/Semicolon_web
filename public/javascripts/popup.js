@@ -80,7 +80,7 @@ function showIndoorMap(place_name) {
                     const images = await getImages(placeName);
 
                     if (images.length > 0) {
-                        for(let i=0;i<images.length;i++){
+                        for(let i=0;i<images.floor;i++){
                             showImage(images[i].image_path);
                             createFloorButtons(images);
                         }
