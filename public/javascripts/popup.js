@@ -23,13 +23,13 @@ function showIndoorMap(place_name) {
     let screenWidth = window.screen.width;
     let screenHeight = window.screen.height;
 
-    let popupWidth = 600;
+    let popupWidth = 1200;
     let popupHeight = 800;
 
     let left = (screenWidth - popupWidth) / 2;
     let top = (screenHeight - popupHeight) / 2;
 
-    let popup = window.open("", "_blank", "width=600,height=800,left=" + left + ",top=" + top);
+    let popup = window.open("", "_blank", `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`);
 
     popup.document.write(`
         <!DOCTYPE html>
@@ -38,9 +38,49 @@ function showIndoorMap(place_name) {
             <meta charset="utf-8">
             <title>${place_name}</title>
             <style>
-                #map { width: 100%; height: 90%; }
-                #buttons { text-align: center; padding: 10px; }
-                .floor-button { margin: 0 5px; padding: 5px 10px; cursor: pointer; }
+                body { 
+                    display: flex; 
+                    flex-direction: column; 
+                    align-items: center; 
+                    justify-content: center; 
+                    margin: 0; 
+                    padding: 0;
+                    height: 100vh;
+                    width: 100vw;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                }
+                #map { 
+                    width: 90%; 
+                    height: 80%; 
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                #buttons { 
+                    width: 100%;
+                    display: flex; 
+                    justify-content: center; 
+                    align-items: center; 
+                    padding: 10px;
+                    position: absolute;
+                    bottom: 0;
+                    background-color: #f8f8f8;
+                }
+                .floor-button { 
+                    margin: 0 5px; 
+                    padding: 10px 20px; 
+                    cursor: pointer; 
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 16px;
+                }
+                .floor-button:hover {
+                    background-color: #0056b3;
+                }
             </style>
         </head>
         <body>
@@ -60,7 +100,7 @@ function showIndoorMap(place_name) {
 
                 function showImage(imagePath) {
                     const imagePathRelative = imagePath.replace('/home/ubuntu/image/', '/images/');
-                    document.getElementById("map").innerHTML = '<img src="' + imagePathRelative + '" alt="Map Image" style="width: 100%; height: auto;">';
+                    document.getElementById("map").innerHTML = '<img src="' + imagePathRelative + '" alt="Map Image" style="max-width: 100%; max-height: 100%;">';
                 }
 
                 function createFloorButtons(images) {
@@ -69,7 +109,7 @@ function showIndoorMap(place_name) {
                     images.forEach(image => {
                         const button = document.createElement('button');
                         button.className = 'floor-button';
-                        button.innerText = "Floor " + image.floor;
+                        button.innerText = image.floor + "층";
                         button.onclick = () => showImage(image.image_path);
                         buttonsContainer.appendChild(button);
                     });
