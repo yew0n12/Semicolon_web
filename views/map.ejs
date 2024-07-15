@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/map.css"/>
+    <link rel="stylesheet" href="/stylesheets/box.css"/>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=02c48f889f43b8b8851b201e4c44c861&libraries=services"></script>
+    
 </head>
 
 <body>
@@ -14,21 +16,28 @@
         <a href="/">홈</a>
         <a href="https://www.instagram.com/jnu_semicolon/">문의</a>
         <a href="https://sel.jnu.ac.kr/">포털 바로가기</a>
-        <a href="#" id="copyMachineLocation">복사기 위치</a>  
     </div>
 
-    <div id="map" style="width: 100%; height: 100vh;"></div>
+    <div id="map"></div>
+    <div id="categoryMenu">
+        <div class="categoryBox" id="copyMachineBox">복사기</div>
+        <div class="categoryBox" id="storeBox">편의점</div>
+        <div class="categoryBox" id="carparkBox">주차장</div>
+    </div>
+
     <div id="menu_wrap">
         <form onsubmit="searchPlaces(); return false;"> 
-          실내지도 검색하기 <input type:"text" value="AI융합대학" id="keyword" size="15">
+          실내지도 검색하기 <input type="text" value="AI융합대학" id="keyword" size="15">
           <button type="submit">검색</button>
         </form>
         <hr>
         <div id="placesList"></div>
+    </div>
+    
     <script type="text/javascript" src="/javascripts/map.js"></script>  
     <script type="text/javascript" src="/javascripts/popup.js"></script>
     <script type="text/javascript">
-        // URL에서 queryString 파싱하여 keyword 추출 bddfcf0a4f147c3a04431a13b746b6c1  02c48f889f43b8b8851b201e4c44c861
+        // URL에서 queryString 파싱하여 keyword 추출 	02c48f889f43b8b8851b201e4c44c861  bddfcf0a4f147c3a04431a13b746b6c1
         const urlParams = new URLSearchParams(window.location.search);
         const keyword = urlParams.get('keyword');
     
@@ -40,6 +49,24 @@
             // 검색 수행
             searchPlaces();
         }
+    
+        // 복사기 
+        document.getElementById('copyMachineBox').addEventListener('click', function(event) {
+            event.preventDefault();
+            showCopyMachineLocations();
+        });
+        
+        // 편의점 
+        document.getElementById('storeBox').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('아직 안 만듬');
+        });
+
+        // 주차장 
+        document.getElementById('carparkBox').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('아직 안 만듬');
+        });
     </script>
 </body>
 </html>

@@ -144,7 +144,7 @@ function removeMarker() {
 
 
 
-//복사기 로직
+// 복사기 로직
 let infowindowList = []; 
 
 // 복사기 위치 데이터
@@ -154,12 +154,6 @@ var copyMachineLocations = [
     { name: "디지털 도서관 복사기", lat: 35.176778, lng: 126.905441 },
     { name: "백도 복사기", lat: 35.178115, lng: 126.906902 }
 ];
-
-
-document.getElementById('copyMachineLocation').addEventListener('click', function(event) {
-    event.preventDefault();
-    showCopyMachineLocations();
-});
 
 function showCopyMachineLocations() {
     removeMarker();
@@ -175,7 +169,7 @@ function showCopyMachineLocations() {
         var iwContent = `
         <div style="padding:10px; width:200px; font-family: Arial, sans-serif; text-align: center;">
             <h4 style="margin:0; padding-bottom:5px; border-bottom:1px solid #ccc;">${location.name}</h4>
-            <p style="margin:10px 0; font-size:14px;">...</p>
+            <p style="margin:10px 0; font-size:14px;">복사기 위치</p>
             <button onclick="openPopup()" style="background-color:#0EA04F; color:white; border:none; padding:8px 8px; cursor:pointer; font-size:14px; border-radius:5px;">복사기 상세위치</button>
         </div>
     `;
