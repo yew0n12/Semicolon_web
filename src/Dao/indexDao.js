@@ -9,5 +9,7 @@ exports.readImages = async function (connection, placeName) {
 
     const [rows] = await connection.query(Query, Params);
 
+    console.log('Query result:', rows); // 쿠리 디버깅
+
     return rows;
 };
