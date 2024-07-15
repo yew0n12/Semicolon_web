@@ -8,11 +8,13 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=02c48f889f43b8b8851b201e4c44c861&libraries=services"></script>
 </head>
+
 <body>
     <div class="navbar">
         <a href="/">홈</a>
         <a href="https://www.instagram.com/jnu_semicolon/">문의</a>
         <a href="https://sel.jnu.ac.kr/">포털 바로가기</a>
+        <a href="#" id="copyMachineLocation">복사기 위치</a>  
     </div>
 
     <div id="map" style="width: 100%; height: 100vh;"></div>
@@ -26,7 +28,7 @@
     <script type="text/javascript" src="/javascripts/map.js"></script>  
     <script type="text/javascript" src="/javascripts/popup.js"></script>
     <script type="text/javascript">
-        // URL에서 queryString 파싱하여 keyword 추출
+        // URL에서 queryString 파싱하여 keyword 추출 bddfcf0a4f147c3a04431a13b746b6c1  02c48f889f43b8b8851b201e4c44c861
         const urlParams = new URLSearchParams(window.location.search);
         const keyword = urlParams.get('keyword');
     

@@ -141,3 +141,98 @@ function removeMarker() {
     }
     markerList = [];
 }
+
+
+
+//복사기 로직
+let infowindowList = []; 
+
+// 복사기 위치 데이터
+var copyMachineLocations = [
+    { name: "공과대학 7호관 복사기", lat: 35.178369, lng: 126.908876 },
+    { name: "경영대학 1호관 복사기", lat: 35.176693, lng: 126.904134 },
+    { name: "디지털 도서관 복사기", lat: 35.176778, lng: 126.905441 },
+    { name: "백도 복사기", lat: 35.178115, lng: 126.906902 }
+];
+
+
+document.getElementById('copyMachineLocation').addEventListener('click', function(event) {
+    event.preventDefault();
+    showCopyMachineLocations();
+});
+
+function showCopyMachineLocations() {
+    removeMarker();
+    
+    copyMachineLocations.forEach(location => {
+        var markerPosition = new kakao.maps.LatLng(location.lat, location.lng);
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        marker.setMap(map);
+        markerList.push(marker);
+
+        var iwContent = `
+        <div style="padding:10px; width:200px; font-family: Arial, sans-serif; text-align: center;">
+            <h4 style="margin:0; padding-bottom:5px; border-bottom:1px solid #ccc;">${location.name}</h4>
+            <p style="margin:10px 0; font-size:14px;">...</p>
+            <button onclick="openPopup()" style="background-color:#0EA04F; color:white; border:none; padding:8px 8px; cursor:pointer; font-size:14px; border-radius:5px;">복사기 상세위치</button>
+        </div>
+    `;
+    
+        var infowindow = new kakao.maps.InfoWindow({
+            position: markerPosition, 
+            content: iwContent
+        });
+        infowindow.open(map, marker);
+        infowindowList.push(infowindow); 
+    });
+
+    panTo();
+}
+
+// 팝업창 열기 함수
+function openPopup() {
+    var popup = window.open("", "Popup", "width=600,height=400,scrollbars=yes,resizable=yes");
+    popup.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>복사기 상세위치</title>
+            <style>
+                body { font-family: Arial, sans-serif; padding: 20px; }
+                h1 { color: #333; }
+                p { font-size: 14px; color: #666; }
+            </style>
+        </head>
+        <body>
+            <h1>복사기 상세위치</h1>
+            <p>mySql 이미지 처리?..</p>
+        </body>
+        </html>
+    `);
+}
+
+// 허공 클릭함면 마커 및 인포윈도우 제거
+kakao.maps.event.addListener(map, "click", function() {
+    removeMarker();
+});
+
+function removeMarker() {
+    for (let i = 0; i < markerList.length; i++) {
+        markerList[i].setMap(null);
+    }
+    markerList = [];
+
+    // 인포윈도우 제거
+    for (let i = 0; i < infowindowList.length; i++) {
+        infowindowList[i].close();
+    }
+    infowindowList = [];
+}
+
+function panTo() {
+    var moveLatLon = new kakao.maps.LatLng(35.177519, 126.906280);  
+    map.panTo(moveLatLon);       
+}
+
