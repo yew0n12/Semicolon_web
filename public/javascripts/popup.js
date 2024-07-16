@@ -37,7 +37,8 @@ function showIndoorMap(place_name) {
         <head>
             <meta charset="utf-8">
             <title>${place_name}</title>
-            body { 
+            <style>
+                body { 
                     display: flex; 
                     flex-direction: row; 
                     align-items: flex-start; 
