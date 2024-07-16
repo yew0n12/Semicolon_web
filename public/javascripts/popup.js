@@ -23,8 +23,8 @@ function showIndoorMap(place_name) {
     let screenWidth = window.screen.width;
     let screenHeight = window.screen.height;
 
-    let popupWidth = 1200;
-    let popupHeight = 800;
+    let popupWidth = 1000;
+    let popupHeight = 600;
 
     let left = (screenWidth - popupWidth) / 2;
     let top = (screenHeight - popupHeight) / 2;
@@ -37,11 +37,10 @@ function showIndoorMap(place_name) {
         <head>
             <meta charset="utf-8">
             <title>${place_name}</title>
-            <style>
-                body { 
+            body { 
                     display: flex; 
                     flex-direction: row; 
-                    align-items: center; 
+                    align-items: flex-start; 
                     justify-content: center; 
                     margin: 0; 
                     padding: 0;
@@ -54,11 +53,13 @@ function showIndoorMap(place_name) {
                     display: flex; 
                     flex-direction: column; 
                     align-items: center;
-                    justify-content: center;
-                    margin-right: 20px;
+                    justify-content: flex-start;
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
                 }
                 #currentFloor {
-                    font-size: 24px; 
+                    font-size: 40px; 
                     font-weight: bold;
                     margin-bottom: 20px;
                 }
@@ -66,11 +67,11 @@ function showIndoorMap(place_name) {
                     margin: 10px 0; 
                     padding: 10px 20px; 
                     cursor: pointer; 
-                    background-color: #007bff;
-                    color: white;
+                    background-color: white;
+                    color: gray;
                     border: none;
                     border-radius: 5px;
-                    font-size: 20px;
+                    font-size: 30px;
                 }
                 .arrow-button:hover {
                     background-color: #0056b3;
@@ -112,7 +113,7 @@ function showIndoorMap(place_name) {
                 }
 
                 function updateFloor() {
-                    document.getElementById('currentFloor').innerText = currentFloor + "층";
+                    document.getElementById('currentFloor').innerText = currentFloor + "F";
                     const image = images.find(img => img.floor == currentFloor);
                     if (image) {
                         showImage(image.image_path);
