@@ -40,7 +40,7 @@ function showIndoorMap(place_name) {
             <style>
                 body { 
                     display: flex; 
-                    flex-direction: column; 
+                    flex-direction: row; 
                     align-items: center; 
                     justify-content: center; 
                     margin: 0; 
@@ -50,44 +50,52 @@ function showIndoorMap(place_name) {
                     overflow: hidden;
                     box-sizing: border-box;
                 }
-                #map { 
-                    width: 90%; 
-                    height: 80%; 
-                    margin-top: 10px;
-                    display: flex;
+                #controls { 
+                    display: flex; 
+                    flex-direction: column; 
                     align-items: center;
                     justify-content: center;
+                    margin-right: 20px;
                 }
-                #buttons { 
-                    width: 100%;
-                    display: flex; 
-                    justify-content: center; 
-                    align-items: center; 
-                    padding: 10px;
-                    position: absolute;
-                    bottom: 0;
-                    background-color: #f8f8f8;
+                #currentFloor {
+                    font-size: 24px; 
+                    font-weight: bold;
+                    margin-bottom: 20px;
                 }
-                .floor-button { 
-                    margin: 0 5px; 
+                .arrow-button { 
+                    margin: 10px 0; 
                     padding: 10px 20px; 
                     cursor: pointer; 
                     background-color: #007bff;
                     color: white;
                     border: none;
                     border-radius: 5px;
-                    font-size: 16px;
+                    font-size: 20px;
                 }
-                .floor-button:hover {
+                .arrow-button:hover {
                     background-color: #0056b3;
+                }
+                #map { 
+                    width: 70%; 
+                    height: 80%; 
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             </style>
         </head>
         <body>
+            <div id="controls">
+                <div id="currentFloor">1층</div>
+                <button class="arrow-button" id="floorUpButton">▲</button>
+                <button class="arrow-button" id="floorDownButton">▼</button>
+            </div>
             <div id="map"></div>
-            <div id="buttons"></div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.1/axios.min.js" integrity="sha512-w9PRLSWbo+Yqin/AzSMGoP+qe8UF1njFtd1rEnR58Xv2GEJNEa6O6Bv53mkPbNyAwGCn1HVt1OOvd5i+E55t+w==" crossorigin="anonymous" referrerPolicy="no-referrer"></script>
             <script>
+                let currentFloor = 1;
+                let images = [];
+
                 async function getImages(placeName) {
                     try {
                         const response = await axios.get('/images', { params: { placeName } });
@@ -103,26 +111,40 @@ function showIndoorMap(place_name) {
                     document.getElementById("map").innerHTML = '<img src="' + imagePathRelative + '" alt="Map Image" style="max-width: 100%; max-height: 100%;">';
                 }
 
-                function createFloorButtons(images) {
-                    const buttonsContainer = document.getElementById('buttons');
-                    buttonsContainer.innerHTML = '';
-                    images.forEach(image => {
-                        const button = document.createElement('button');
-                        button.className = 'floor-button';
-                        button.innerText = image.floor + "층";
-                        button.onclick = () => showImage(image.image_path);
-                        buttonsContainer.appendChild(button);
-                    });
+                function updateFloor() {
+                    document.getElementById('currentFloor').innerText = currentFloor + "층";
+                    const image = images.find(img => img.floor == currentFloor);
+                    if (image) {
+                        showImage(image.image_path);
+                    } else {
+                        alert('해당 층의 이미지가 없습니다.');
+                    }
                 }
+
+                document.getElementById('floorUpButton').addEventListener('click', function() {
+                    if (currentFloor < images.length) {
+                        currentFloor++;
+                        updateFloor();
+                    } else {
+                        alert('더 높은 층이 없습니다.');
+                    }
+                });
+
+                document.getElementById('floorDownButton').addEventListener('click', function() {
+                    if (currentFloor > 1) {
+                        currentFloor--;
+                        updateFloor();
+                    } else {
+                        alert('더 낮은 층이 없습니다.');
+                    }
+                });
 
                 async function init() {
                     const placeName = "${place_name}";
-                    const images = await getImages(placeName);
+                    images = await getImages(placeName);
 
                     if (images.length > 0) {
-                        showImage(images[0].image_path);
-                        createFloorButtons(images);
-                         // 기본적으로 첫 번째 층 이미지 표시
+                        updateFloor();
                     } else {
                         document.getElementById("map").innerText = "No images available.";
                     }
