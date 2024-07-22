@@ -60,9 +60,10 @@ function showIndoorMap(place_name) {
                     left: 20px;
                 }
                 #currentFloor {
-                    font-size: 40px; 
+                    font-size: 25px; 
                     font-weight: bold;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
+                    font-family: 'Noto Sans Rounded', sans-serif;
                 }
                 .arrow-button { 
                     margin: 5px 0; 
@@ -73,6 +74,7 @@ function showIndoorMap(place_name) {
                     border: none;
                     border-radius: 5px;
                     font-size: 20px;
+                    font-family: 'Noto Sans Rounded', sans-serif;
                 }
                 .arrow-button:hover {
                     background-color: darkgray;
