@@ -24,7 +24,7 @@ function showIndoorMap(place_name) {
     let screenHeight = window.screen.height;
 
     let popupWidth = 1000;
-    let popupHeight = 600;
+    let popupHeight = 500;
 
     let left = (screenWidth - popupWidth) / 2;
     let top = (screenHeight - popupHeight) / 2;
@@ -65,21 +65,21 @@ function showIndoorMap(place_name) {
                     margin-bottom: 20px;
                 }
                 .arrow-button { 
-                    margin: 10px 0; 
-                    padding: 10px 20px; 
+                    margin: 5px 0; 
+                    padding: 5px 10px; 
                     cursor: pointer; 
                     background-color: gray;
                     color: white;
                     border: none;
                     border-radius: 5px;
-                    font-size: 30px;
+                    font-size: 20px;
                 }
                 .arrow-button:hover {
                     background-color: darkgray;
                 }
                 #map { 
                     width: 70%; 
-                    height: 80%; 
+                    height: 70%; 
                     display: flex;
                     align-items: center;
                     justify-content: center;
