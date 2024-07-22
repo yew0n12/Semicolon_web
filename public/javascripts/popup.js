@@ -24,7 +24,7 @@ function showIndoorMap(place_name) {
     let screenHeight = window.screen.height;
 
     let popupWidth = 1000;
-    let popupHeight = 600;
+    let popupHeight = 500;
 
     let left = (screenWidth - popupWidth) / 2;
     let top = (screenHeight - popupHeight) / 2;
@@ -60,26 +60,28 @@ function showIndoorMap(place_name) {
                     left: 20px;
                 }
                 #currentFloor {
-                    font-size: 40px; 
+                    font-size: 25px; 
                     font-weight: bold;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
+                    font-family: 'Noto Sans Rounded', sans-serif;
                 }
                 .arrow-button { 
-                    margin: 10px 0; 
-                    padding: 10px 20px; 
+                    margin: 5px 0; 
+                    padding: 5px 10px; 
                     cursor: pointer; 
-                    background-color: white;
-                    color: gray;
+                    background-color: gray;
+                    color: white;
                     border: none;
                     border-radius: 5px;
-                    font-size: 30px;
+                    font-size: 20px;
+                    font-family: 'Noto Sans Rounded', sans-serif;
                 }
                 .arrow-button:hover {
-                    background-color: #0056b3;
+                    background-color: darkgray;
                 }
                 #map { 
                     width: 70%; 
-                    height: 80%; 
+                    height: 70%; 
                     display: flex;
                     align-items: center;
                     justify-content: center;
