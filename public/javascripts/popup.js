@@ -68,14 +68,14 @@ function showIndoorMap(place_name) {
                     margin: 10px 0; 
                     padding: 10px 20px; 
                     cursor: pointer; 
-                    background-color: white;
-                    color: gray;
+                    background-color: gray;
+                    color: white;
                     border: none;
                     border-radius: 5px;
                     font-size: 30px;
                 }
                 .arrow-button:hover {
-                    background-color: #0056b3;
+                    background-color: darkgray;
                 }
                 #map { 
                     width: 70%; 
