@@ -67,17 +67,20 @@ function showIndoorMap(place_name) {
                     font-family: 'Noto Sans Rounded', sans-serif;
                 }
                 .arrow-button { 
-                    margin: 5px 0; 
-                    padding: 5px 10px; 
-                    cursor: pointer; 
-                    background-color: gray;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    font-size: 20px;
+                    width: 0; 
+                    height: 0; 
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    cursor: pointer;
+                }
+                #floorUpButton {
+                    border-bottom: 20px solid gray;
+                }
+                #floorDownButton {
+                    border-top: 20px solid gray;
                 }
                 .arrow-button:hover {
-                    background-color: darkgray;
+                    border-color: darkgray;
                 }
                 #map { 
                     width: 70%; 
