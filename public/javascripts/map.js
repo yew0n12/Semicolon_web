@@ -155,6 +155,26 @@ var copyMachineLocations = [
     { name: "백도 복사기", lat: 35.178115, lng: 126.906902 }
 ];
 
+// 24시간 편의점 위치 데이터
+var storeLocations = [
+    { name: "이마트24 제2학생마루", lat: 35.174844, lng: 126.902762 },
+    { name: "cu전대상대점", lat: 35.177147, lng: 126.900913 },
+    { name: "cu전대송촌점", lat: 35.177274, lng: 126.902314 },
+    { name: "세븐일레븐 전대유창점", lat: 35.177735, lng: 126.904117 },
+    { name: "이마트24 전대도서관점", lat: 35.177992, lng: 126.906894 },
+    { name: "이마트 24 전남대학생회관점", lat: 35.176627, lng: 126.907847 },
+    { name: "이마트24 전남대공대점", lat: 35.179334, lng: 126.909376 },
+    { name: "CU전남대생활관점", lat: 35.180568, lng: 126.905381 },
+    { name: "CU전대예대점", lat: 35.180679, lng: 126.904256 },
+    { name: "cu용봉용주점", lat: 35.182138, lng: 126.906488 },
+    { name: "이마트24전대북문점", lat: 35.182160, lng: 126.908998 },
+    { name: "cu전남대용봉문화관점", lat: 35.175323, lng: 126.910974 },
+    { name: "gs25전남대학교점", lat: 35.172194, lng: 126.904950 },
+    { name: "cu전대현아점", lat: 35.172267, lng: 126.906690 },
+    { name: "세븐 광주중흥센터점", lat: 35.171984, lng: 126.908541 }
+];
+
+
 function showCopyMachineLocations() {
     removeMarker();
     
@@ -178,12 +198,65 @@ function showCopyMachineLocations() {
             position: markerPosition, 
             content: iwContent
         });
-        infowindow.open(map, marker);
-        infowindowList.push(infowindow); 
+
+        kakao.maps.event.addListener(marker, 'click', function() {
+            // 모든 인포윈도우 닫기
+            closeAllInfoWindows();
+            // 현재 인포윈도우 열기
+            infowindow.open(map, marker);  
+            infowindowList.push(infowindow); 
+        });
+
+
     });
 
     panTo();
 }
+
+function show24stores() {
+    removeMarker();
+    
+    storeLocations.forEach(location => {
+        var markerPosition = new kakao.maps.LatLng(location.lat, location.lng);
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        marker.setMap(map);
+        markerList.push(marker);
+
+        var iwContent = `
+        <div style="padding:10px; width:200px; font-family: Arial, sans-serif; text-align: center;">
+            <h4 style="margin:0; padding-bottom:5px; border-bottom:1px solid #ccc;">${location.name}</h4>
+            <p style="margin:10px 0; font-size:14px;">편의점</p>
+        </div>
+    `;
+    
+        var infowindow = new kakao.maps.InfoWindow({
+            position: markerPosition, 
+            content: iwContent
+        });
+
+        kakao.maps.event.addListener(marker, 'click', function() {
+            // 모든 인포윈도우 닫기
+            closeAllInfoWindows();
+            // 현재 인포윈도우 열기
+            infowindow.open(map, marker);  
+            infowindowList.push(infowindow); 
+        });
+
+
+    });
+
+    panTo();
+};
+
+function closeAllInfoWindows() {
+    for (let i = 0; i < infowindowList.length; i++) {
+        infowindowList[i].close();
+    }
+    infowindowList = [];
+}
+
 
 // 팝업창 열기 함수
 function openPopup() {
