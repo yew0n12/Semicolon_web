@@ -37,6 +37,7 @@ function showIndoorMap(place_name) {
         <head>
             <meta charset="utf-8">
             <title>${place_name}</title>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Rounded:wght@400;700&display=swap">
             <style>
                 body { 
                     display: flex; 
@@ -66,18 +67,20 @@ function showIndoorMap(place_name) {
                     font-family: 'Noto Sans Rounded', sans-serif;
                 }
                 .arrow-button { 
-                    margin: 5px 0; 
-                    padding: 5px 10px; 
-                    cursor: pointer; 
-                    background-color: gray;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    font-size: 20px;
-                    font-family: 'Noto Sans Rounded', sans-serif;
+                    width: 0; 
+                    height: 0; 
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    cursor: pointer;
+                }
+                #floorUpButton {
+                    border-bottom: 20px solid gray;
+                }
+                #floorDownButton {
+                    border-top: 20px solid gray;
                 }
                 .arrow-button:hover {
-                    background-color: darkgray;
+                    border-color: darkgray;
                 }
                 #map { 
                     width: 70%; 
@@ -91,11 +94,11 @@ function showIndoorMap(place_name) {
         <body>
             <div id="controls">
                 <div id="currentFloor">1층</div>
-                <button class="arrow-button" id="floorUpButton">▲</button>
-                <button class="arrow-button" id="floorDownButton">▼</button>
+                <div class="arrow-button" id="floorUpButton"></div>
+                <div class="arrow-button" id="floorDownButton"></div>
             </div>
             <div id="map"></div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.1/axios.min.js" integrity="sha512-w9PRLSWbo+Yqin/AzSMGoP+qe8UF1njFtd1rEnR58Xv2GEJNEa6O6Bv53mkPbNyAwGCn1HVt1OOvd5i+E55t+w==" crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.1/axios.min.js" integrity="sha512-w9PRLSWbo+Yqin/AzSMGoP+qe8UF1njFtd1rEnR58Vv2GEJNEa6O6Bv53mkPbNyAwGCn1HVt1OOvd5i+E55t+w==" crossorigin="anonymous" referrerPolicy="no-referrer"></script>
             <script>
                 let currentFloor = 1;
                 let images = [];
