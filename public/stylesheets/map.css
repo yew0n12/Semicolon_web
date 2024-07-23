@@ -35,7 +35,7 @@
 
 .info .body {
     position: relative;
-    overflow: hidden;
+    overflow: clip;
 }
 
 .info .desc {

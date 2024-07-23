@@ -80,7 +80,7 @@ function showIndoorMap(place_name) {
                     border-top: 20px solid gray;
                 }
                 .arrow-button:hover {
-                    border-color: darkgray;
+                    border-color: white;
                 }
                 #map { 
                     width: 70%; 
