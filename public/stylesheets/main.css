@@ -2,93 +2,122 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(50%); /* 배경 이미지 어둡게 */
+    height: 100vh;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a; 
 }
 
 .container {
-    position: relative;
-    z-index: 1; /* 텍스트를 배경 위에 */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1; 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #3A3A3A; 
+    border-radius: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'KCC-Hanbit';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+.top-left-text {
+    font-family: 'KCC-Hanbit', sans-serif; 
+    position: fixed;
+    top: 20px; 
+    left: 20px; 
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1000; 
 }
 
 .title {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-family: 'KCC-Hanbit', sans-serif; 
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 추가 */
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.2); 
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 15px; 
 }
 
-.subtitle {
-    font-size: 16px;
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    max-width: 700px; 
     margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 추가 */
+    margin-left: 40px; 
+}
+
+.prompt-text {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #000;
 }
 
 .search-box {
     padding: 15px;
-    width: 400px;
+    flex-grow: 1;
     border: 1px solid #ccc;
     border-radius: 25px;
     font-size: 18px;
     outline: none;
     transition: box-shadow 0.3s;
-    margin-bottom: 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.9); /* 반투명한 흰색 배경 */
+    background-color: rgba(255, 255, 255, 0.9); 
 }
 
 .search-box:focus {
     box-shadow: 0 0 5px 1px #4285f4;
 }
-
 .search-button {
     padding: 15px 30px;
-    background-color: #4285f4;
-    border: none;
+    background-color: transparent; 
+    border: 2px solid white; 
     border-radius: 25px;
-    color: #fff;
+    color: white; 
     font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
     text-transform: uppercase;
+    margin-left: 10px;
 }
 
 .search-button:hover {
-    background-color: #357ae8;
+    border-color: #333;
 }
 
 .show-map-button {
     padding: 8px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+    background-color: transparent; 
+    color: white; 
+    border: 2px solid white;
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-top: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-top: 20px;
+    margin-left: -20px; 
 }
 
 .show-map-button:hover {
-    background-color: #45a049;
+    border-color: #333; 
 }
