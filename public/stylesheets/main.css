@@ -27,13 +27,22 @@ body {
     box-sizing: border-box;
 }
 @font-face {
-    font-family: 'KCC-Hanbit';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2') format('woff2');
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+@keyframes blink {
+    0%, 100% {
+        color: #fff; /* 기본 색상 */
+    }
+    50% {
+        color: gray; /* 깜빡일 때 짙은 색 */
+    }
+}
+
 .top-left-text {
-    font-family: 'KCC-Hanbit', sans-serif; 
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif; 
     position: fixed;
     top: 20px; 
     left: 20px; 
@@ -42,13 +51,15 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     z-index: 1000; 
+    animation: blink 2s infinite; /* 애니메이션 추가 */
 }
 
+
 .title {
-    font-family: 'KCC-Hanbit', sans-serif; 
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif; 
     color: #fff;
     text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.2); 
-    font-size: 55px;
+    font-size: 60px;
     font-weight: bold;
     margin-bottom: 15px; 
 }
