@@ -39,8 +39,8 @@
 .infowindow-content {
     padding: 35px;
     background-color: #ffffff;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    overflow: visible; /* Ensure the content is fully visible */
 }
 
 .place-name {
@@ -71,7 +71,7 @@
 
 .info .body {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .info .desc {
@@ -80,6 +80,8 @@
     height: 75px;
     display: block;
 }
+
+
 
 .map_wrap,
 .map_wrap * {
