@@ -22,7 +22,7 @@
 <td width="100" align="center">나예원</td>
 <td width="250" align="center">기획, BE </td>
 <td width="150" align="center">
-  <a href="" target="_blank"><img src=""/></a></td>
+  <a href="https://github.com/yew0n12" target="_blank"><img src="https://img.shields.io/badge/minsik-655ced?style=social&logo=github"/></a></td>
 </tr>
 	
 <tr>
