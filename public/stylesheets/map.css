@@ -39,8 +39,8 @@
 .infowindow-content {
     padding: 35px;
     background-color: #ffffff;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    overflow: visible; /* Ensure the content is fully visible */
 }
 
 .place-name {
@@ -68,18 +68,20 @@
 /*
 30줄까지 infowindow css
 */
-
 .info .body {
     position: relative;
-    overflow: hidden;
+    width: auto;
+    overflow: visible;
 }
 
 .info .desc {
     position: relative;
     margin: 8px 0 0 90px;
-    height: 75px;
+    width: auto;
     display: block;
 }
+
+
 
 .map_wrap,
 .map_wrap * {
