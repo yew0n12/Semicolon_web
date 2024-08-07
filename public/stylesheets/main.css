@@ -201,13 +201,13 @@ body {
 
 /* 두 번째 이미지 */
 .bottomimg .slide:nth-child(2) {
-    background-image: url('../images/img3.png');
+    background-image: url('../images/img2.png');
     animation-delay: 3s;
 }
 
 /* 세 번째 이미지 */
 .bottomimg .slide:nth-child(3) {
-    background-image: url('../images/img1.png');
+    background-image: url('../images/img3.png');
     animation-delay: 6s;
 }
 
