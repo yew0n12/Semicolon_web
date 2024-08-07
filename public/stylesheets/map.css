@@ -68,16 +68,16 @@
 /*
 30줄까지 infowindow css
 */
-
 .info .body {
     position: relative;
+    width: auto;
     overflow: visible;
 }
 
 .info .desc {
     position: relative;
     margin: 8px 0 0 90px;
-    height: 75px;
+    width: auto;
     display: block;
 }
 
