@@ -3,5 +3,5 @@ module.exports = {
     user: "kicoa24",
     port: "3306",
     password: "bjr510101",
-    database: "testSchema",
+    database: "mapSchema",
 };
