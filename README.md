@@ -1,16 +1,16 @@
- :pushpin: <h1>Semicolon;</h1>
+# :pushpin: Semicolon; 
 <p>전남대학교 인공지능학부 과동아리 세미콜론 팀 프로젝트에서 제작한 전남대학교 실내지도 확인 사이트 입니다.</p>
 
 ## project 소개
 <p>전남대학교 캠퍼스는 매우 넓고 복잡한 구조를 가지고 있습니다. 실내지도를 확인할 수 있으면 학생들이 조금 더 쉽게 강의실을 찾아갈 수 있지 않을까? 라는 생각에서 만들어진 사이트입니다.</p>
 
-## 개발 기간
+##  :calendar: 개발 기간
 <p>2024.04.03 ~ 2024.08.</p>
 
-## 화면 구성
+##  :computer: 화면 구성
 ![홈페이지](https://github.com/user-attachments/assets/ff725a69-7c54-4dad-a3ee-5dafec2f561e)
 
-## Project Member
+## :clipboard: Project Member
 <table width="800">
 <thead>
 <tr>
