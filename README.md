@@ -8,6 +8,7 @@
 <p>2024.04.03 ~ 2024.08.</p>
 
 ## 화면 구성
+![홈페이지](https://github.com/user-attachments/assets/ff725a69-7c54-4dad-a3ee-5dafec2f561e)
 
 ## Project Member
 <table width="800">
