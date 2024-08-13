@@ -5,10 +5,11 @@
 <p>전남대학교 캠퍼스는 매우 넓고 복잡한 구조를 가지고 있습니다. 실내지도를 확인할 수 있으면 학생들이 조금 더 쉽게 강의실을 찾아갈 수 있지 않을까? 라는 생각에서 만들어진 사이트입니다.</p>
 
 ##  :calendar: 개발 기간
-<p>2024.04.03 ~ 2024.08.</p>
+<p>2024.05.20 ~ 2024.08.13</p>
 
 ##  :computer: 화면 구성
 ![홈페이지](https://github.com/user-attachments/assets/ff725a69-7c54-4dad-a3ee-5dafec2f561e)
+![map ](https://github.com/user-attachments/assets/25d3e779-8217-4464-a134-b60a92daa542)
 
 ## :bulb: 주요 기능
 <ul>
@@ -74,7 +75,6 @@
   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
   <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
-  <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
 </p>
 <p>
   <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> 
