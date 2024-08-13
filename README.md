@@ -7,6 +7,8 @@
 ## 개발 기간
 <p>2024.04.03 ~ 2024.08.</p>
 
+## 화면 구성
+
 ## Project Member
 <table width="800">
 <thead>
