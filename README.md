@@ -59,7 +59,7 @@
 <td width="100" align="center">차희준</td>
 <td width="250" align="center">FE</td>
 <td width="150" align="center">	
-	<a href="" target="_blank"><img src=""/></a>
+	<a href="https://github.com/mono009" target="_blank"><img src="https://img.shields.io/badge/mono009-655ced?style=social&logo=github"/></a>
 </td>
 </tr>
 
