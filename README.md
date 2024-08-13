@@ -1,4 +1,4 @@
-<h1>Semicolon;</h1>
+ :pushpin: <h1>Semicolon;</h1>
 <p>전남대학교 인공지능학부 과동아리 세미콜론 팀 프로젝트에서 제작한 전남대학교 실내지도 확인 사이트 입니다.</p>
 
 ## project 소개
@@ -8,6 +8,7 @@
 <p>2024.04.03 ~ 2024.08.</p>
 
 ## 화면 구성
+![홈페이지](https://github.com/user-attachments/assets/ff725a69-7c54-4dad-a3ee-5dafec2f561e)
 
 ## Project Member
 <table width="800">
