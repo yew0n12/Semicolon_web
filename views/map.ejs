@@ -65,10 +65,10 @@
                 <!-- Info Panel -->
                 <div class="w-64 bg-white p-4 border-l border-gray-200 space-y-4">
                     <div class="p-4 border rounded-lg">
-                        <h2 class="text-lg font-semibold">Facilities</h2>
-                        <button id="copyMachineBox" class="w-full bg-blue-500 text-white py-2 rounded-lg mb-2 hover:bg-blue-600">복사기</button>
-                        <button id="storeBox" class="w-full bg-blue-500 text-white py-2 rounded-lg mb-2 hover:bg-blue-600">편의점</button>
-                        <button id="carparkBox" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">주차장</button>
+                        <h2 class="text-lg">편의시설</h2>
+                        <button id="copyMachineBox" class="w-full bg-green-400 text-white py-2 rounded-lg mb-2 hover:bg-green-300">복사기</button>
+                        <button id="storeBox" class="w-full bg-green-400 text-white py-2 rounded-lg mb-2 hover:bg-green-300">편의점</button>
+                        <button id="carparkBox" class="w-full bg-green-400 text-white py-2 rounded-lg hover:bg-green-300">주차장</button>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
             // 주차장 
             document.getElementById('carparkBox').addEventListener('click', function(event) {
                 event.preventDefault();
-                alert('아직 안 만듬');
+                alert('추후 공개');
         });
 
 
@@ -100,7 +100,7 @@
     <div class="navbar">
         <!-- 로고 이미지 -->
         <a href="/">
-            <img src="/images/jnulogo.png" alt="로고" class="h-10 mr-4">
+            <img src="/images/jnulogo.png" alt="로고" class="h-6 mr-4">
         </a>
         <a href="https://www.instagram.com/jnu_semicolon/">문의</a>
         <a href="https://sel.jnu.ac.kr/">포털 바로가기</a>
@@ -109,8 +109,7 @@
     <div id="menu_wrap" class="absolute top-20 left-20 bg-white p-4 shadow-lg rounded-lg">
         <form onsubmit="searchPlaces(); return false;"> 
             <span class="text-lg font-semibold pt-2.5 block">실내지도 검색하기</span>
-            <input type="text" value="AI융합대학" id="keyword" size="15" class="ml-2">
-            <button type="submit" class="border border-black px-2 py-1 rounded-lg">검색</button>
+            <input type="text" value="AI융합대학" id="keyword" size="7" class="h-10 mr-4 bg-gray-100 border border-black px-2 py-2 rounded-lg"><button type="submit" class="border border-black px-2 py-1 rounded-lg">검색</button>
         </form>
         <hr class="my-4">
         <div id="placesList"></div>
