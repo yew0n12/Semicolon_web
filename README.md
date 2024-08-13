@@ -10,6 +10,7 @@
 ##  :computer: 화면 구성
 ![홈페이지](https://github.com/user-attachments/assets/ff725a69-7c54-4dad-a3ee-5dafec2f561e)
 ![map ](https://github.com/user-attachments/assets/25d3e779-8217-4464-a134-b60a92daa542)
+![편의시설](https://github.com/user-attachments/assets/54cb5ebe-2a84-4744-9aa3-d1cfadfcf372)
 ![지도](https://github.com/user-attachments/assets/8de9398a-5b0b-44e5-b275-3a20045d8431)
 
 
