@@ -15,7 +15,7 @@
 	<li>전남대학교 광주캠퍼스 지도 확인</li>
 	<li>층 별로 내부 구조를 확인 할 수 있도록 설정</li>
 	<li>복사기 위치, 편의점 위치 확인</li>
-<ul>
+</ul>
 	
 ## :clipboard: Project Member
 <table width="800">
