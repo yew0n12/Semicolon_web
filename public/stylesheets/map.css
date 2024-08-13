@@ -1,6 +1,12 @@
-
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /* Styles for the search bar */
 .search-bar {
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif; 
     display: flex;
     align-items: center;
     background-color: #ffffff;
@@ -11,6 +17,7 @@
 }
 
 .search-bar input[type="text"] {
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif; 
     border: none;
     outline: none;
     flex: 1;
@@ -31,12 +38,14 @@
 }
 
 .search-bar button i {
+
     font-size: 20px;
     color: #5f6368;
 }
 
 /* Other CSS rules */
 .infowindow-content {
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif; 
     padding: 35px;
     background-color: #ffffff;
     border-radius: 5px;
@@ -44,6 +53,8 @@
 }
 
 .place-name {
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif; 
+
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -53,6 +64,7 @@
 }
 
 .map-button {
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif; 
     background-color: #5cb85c;
     color: white;
     border: none;
@@ -92,6 +104,7 @@
 
 #menu_wrap {
     position: absolute;
+    text-align: center;
     top: 50px; /* 상단바 높이만큼 내려옴 */
     left: 0;
     bottom: 0;
@@ -143,8 +156,9 @@
 
 /* 상단바 스타일 */
 .navbar {
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif; 
     overflow: hidden;
-    background-color: #0EA04F; /* 초록색 */
+    background-color:  #74d3ae;  /* 초록색 */
     position: fixed;
     top: 0;
     width: 100%;
@@ -152,6 +166,7 @@
 }
 
 .navbar a {
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif; 
     float: left;
     display: block;
     color: #fff; /* 흰색 */
@@ -165,4 +180,10 @@
     color: black;
 }
 
+
+.text-lg{
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif; 
+    text-align: center;
+    padding: 8px;
+}
 
