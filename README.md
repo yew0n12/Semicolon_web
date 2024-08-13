@@ -10,6 +10,12 @@
 ##  :computer: 화면 구성
 ![홈페이지](https://github.com/user-attachments/assets/ff725a69-7c54-4dad-a3ee-5dafec2f561e)
 
+## :bulb: 주요 기능
+<li>
+	<ul>전남대학교 광주캠퍼스 지도 확인</ul>
+	<ul>층 별로 내부 구조를 확인 할 수 있도록 설정</ul>
+	<ul>복사기 위치, 편의점 위치 확인</ul>
+</li>
 ## :clipboard: Project Member
 <table width="800">
 <thead>
