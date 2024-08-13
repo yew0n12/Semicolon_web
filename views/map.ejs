@@ -3,70 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>전남대학교 실내지도</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/map.css"/>
-    <link rel="stylesheet" href="/stylesheets/box.css"/>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=be78679888cca4665cd8c42da5f815f9&libraries=services"></script>
-    
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3ed877fa68b9bce6ba72a215d6f6d333&libraries=services"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-16 bg-white flex flex-col items-center py-4 border-r border-gray-200">
+            <button class="mb-4">
+                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6m-6 0l-7 7-2-2m0 0l7-7 7 7"></path>
+                </svg>
+            </button>
+            <button class="mb-4">
+                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 0c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 0c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"></path>
+                </svg>
+            </button>
+            <button class="mb-4">
+                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"></path>
+                </svg>
+            </button>
+            <button class="mb-4">
+                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Top Bar -->
+            <div class="flex items-center justify-between bg-white p-4 border-b border-gray-200">
+                <div class="flex items-center">
+                    <button class="mr-4">
+                        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6m-6 0l-7 7-2-2m0 0l7-7 7 7"></path>
+                        </svg>
+                    </button>
+                    <input type="text" placeholder="Search location, address..." class="bg-gray-100 rounded-full px-4 py-2 text-sm focus:outline-none">
+                </div>
+                <button>
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Map and Info -->
+            <div class="flex-1 flex">
+                <!-- Map Placeholder -->
+                <div id="map" style="width: 100%; height: 100vh;"></div>
+                <!-- Info Panel -->
+                <div class="w-64 bg-white p-4 border-l border-gray-200 space-y-4">
+                    <div class="p-4 border rounded-lg">
+                        <h2 class="text-lg font-semibold">Facilities</h2>
+                        <button id="btnRestroom" class="w-full bg-blue-500 text-white py-2 rounded-lg mb-2 hover:bg-blue-600">화장실</button>
+                        <button id="btnWaterFountain" class="w-full bg-blue-500 text-white py-2 rounded-lg mb-2 hover:bg-blue-600">정수기</button>
+                        <button id="btnCopier" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">복사기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <script type="text/javascript">
+            // 복사기 
+            document.getElementById('copyMachineBox').addEventListener('click', function(event) {
+                event.preventDefault();
+                showCopyMachineLocations();
+            });
+        
+           // 편의점 
+           document.getElementById('storeBox').addEventListener('click', function(event) {
+                event.preventDefault();
+                show24stores();
+            });
 
-<body>
+            // 주차장 
+            document.getElementById('carparkBox').addEventListener('click', function(event) {
+                event.preventDefault();
+                alert('아직 안 만듬');
+        });
+
+
+            </script>
+        </div>
+    </div>
+
     <div class="navbar">
+        <!-- 로고 이미지 -->
+        <a href="/">
+            <img src="../images/jnulogo.png" alt="로고" class="h-10 mr-4">
+        </a>
         <a href="/">홈</a>
         <a href="https://www.instagram.com/jnu_semicolon/">문의</a>
         <a href="https://sel.jnu.ac.kr/">포털 바로가기</a>
     </div>
 
-    <div id="map"></div>
-    <div id="categoryMenu">
-        <div class="categoryBox" id="copyMachineBox">복사기</div>
-        <div class="categoryBox" id="storeBox">편의점</div>
-        <div class="categoryBox" id="carparkBox">미정</div>
-    </div>
-
-    <div id="menu_wrap">
+    <div id="menu_wrap" class="absolute top-20 left-20 bg-white p-4 shadow-lg rounded-lg">
         <form onsubmit="searchPlaces(); return false;"> 
-          실내지도 검색하기 <input type="text" value="AI융합대학" id="keyword" size="15">
-          <button type="submit">검색</button>
+            <span class="text-lg font-semibold pt-2.5 block">실내지도 검색하기</span>
+            <input type="text" value="AI융합대학" id="keyword" size="15" class="ml-2">
+            <button type="submit" class="border border-black px-2 py-1 rounded-lg">검색</button>
         </form>
-        <hr>
+        <hr class="my-4">
         <div id="placesList"></div>
-    </div>
-    
+    </div>    
+
     <script type="text/javascript" src="/javascripts/map.js"></script>  
     <script type="text/javascript" src="/javascripts/popup.js"></script>
     <script type="text/javascript">
-        // URL에서 queryString 파싱하여 keyword 추출 	02c48f889f43b8b8851b201e4c44c861  bddfcf0a4f147c3a04431a13b746b6c1
+        // URL에서 queryString 파싱하여 keyword 추출
         const urlParams = new URLSearchParams(window.location.search);
         const keyword = urlParams.get('keyword');
-    
+
         // keyword가 유효한 경우 검색 수행
         if (keyword) {
             // keyword를 검색 창에 설정
             $("#keyword").val(keyword);
-    
+
             // 검색 수행
             searchPlaces();
         }
-    
-        // 복사기 
-        document.getElementById('copyMachineBox').addEventListener('click', function(event) {
-            event.preventDefault();
-            showCopyMachineLocations();
-        });
-        
-        // 편의점 
-        document.getElementById('storeBox').addEventListener('click', function(event) {
-            event.preventDefault();
-            show24stores();
-        });
-
-        // 주차장 
-        document.getElementById('carparkBox').addEventListener('click', function(event) {
-            event.preventDefault();
-            alert('아직 안 만듬');
-        });
     </script>
 </body>
 </html>
