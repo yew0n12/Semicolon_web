@@ -43,7 +43,7 @@
 <td width="100" align="center">최재원</td>
 <td width="250" align="center">FE</td>
 <td width="150" align="center">	
-	<a href="" target="_blank"><img src=""/></a></td>
+	<a href="https://github.com/ppre1ude" target="_blank"><img src="https://img.shields.io/badge/ppre1ude-655ced?style=social&logo=github"></a></td>
 </td>
 </tr>
 
@@ -51,7 +51,7 @@
 <td width="100" align="center">박현민</td>
 <td width="250" align="center">BE</td>
 <td width="150" align="center">	
-	<a href="" target="_blank"><img src=""/></a></td>
+	<a href="" target="https://github.com/hyunminee"><img src="https://img.shields.io/badge/hyunminee-655ced?style=social&logo=github"></a></td>
 </td>
 </tr>
 	
