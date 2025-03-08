@@ -54,13 +54,13 @@
 **인프라**
 - AWS EC2
 - AWS S3
-- GitHub Actions
+
 
 **라이브러리**
 - [KakaoMaps API](https://apis.map.kakao.com/)
 
 ## 인프라구조
-![인프라구조](https://drive.google.com/file/d/1GoL2FBCNljpnODXLMHgKCYkA_rLqg71S/view?usp=drive_link)
+![인프라구조](https://drive.google.com/file/d/1GoL2FBCNljpnODXLMHgKCYkA_rLqg71S/view?usp=drive_link](https://github.com/yew0n12/Semicolon_web/blob/realMain/public/images/jnu.drawio.png)
 
 
 
