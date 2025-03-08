@@ -8,7 +8,7 @@
  - [개요](#개요) 
  - [개발 환경](#개발-환경)
  - [사용 기술](#사용-기술)
- - [아키텍처](#시스템-아키텍처) 
+ - [아키텍처](#인프라구조) 
  - [E-R 다이어그램](#e-r-다이어그램)
  - [프로젝트 목적](#프로젝트-목적)
  - [화면 구성](#화면-구성)
@@ -61,6 +61,9 @@
 
 ## 인프라구조
 ![인프라구조](https://github.com/yew0n12/Semicolon_web/blob/realMain/public/images/jnu.drawio.png)
+
+## E-R 다이어그램
+![ERD](https://github.com/yew0n12/Semicolon_web/blob/realMain/public/images/jnuMapERD.png)
 
 
 
