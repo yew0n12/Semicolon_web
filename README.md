@@ -120,6 +120,14 @@
 <td width="150" align="center">
   <a href="https://github.com/yew0n12" target="_blank"><img src="https://img.shields.io/badge/yew0n12-655ced?style=social&logo=github"></a></td>
 </tr>
+
+<tr>
+<td width="100" align="center">채민식</td>
+<td width="250" align="center">BE, FE, DB</td>
+<td width="150" align="center">	
+	<a href="https://github.com/wrd1stProgrammer" target="_blank"><img src="https://img.shields.io/badge/minsik-655ced?style=social&logo=github"/></a>
+</td>
+</tr>
 	
 <tr>
 <td width="100" align="center">최재원</td>
@@ -145,13 +153,7 @@
 </td>
 </tr>
 
-<tr>
-<td width="100" align="center">채민식</td>
-<td width="250" align="center">BE, FE</td>
-<td width="150" align="center">	
-	<a href="https://github.com/wrd1stProgrammer" target="_blank"><img src="https://img.shields.io/badge/minsik-655ced?style=social&logo=github"/></a>
-</td>
-</tr>
+
 </tbody>
 </table>
 
