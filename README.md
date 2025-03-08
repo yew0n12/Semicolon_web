@@ -2,7 +2,7 @@
 - 2024.10.20 AWS 프리티어 지원 종료로 인해 배포가 종료되었습니다. 
 
 # :pushpin: Semicolon; 
-<p>전남대학교 인공지능학부 과동아리 세미콜론 팀 프로젝트에서 제작한 전남대학교 실내지도 확인 사이트 입니다.</p>
+<p>전남대학교 인공지능학부 과동아리 세미콜론 팀 프로젝트에서 개발한 전남대학교 실내지도 확인 사이트 입니다.</p>
 
 # 📖 목차 
  - [개요](#개요) 
@@ -18,7 +18,12 @@
  - [CI/CD](#cicd)
     - [무중단 배포](#무중단-배포)
 
-## 화면 구성💻
+
+## 📃개요
+**전남대학교 실내지도**는 학교 학생들이 찾고자하는 건물과 강의실의 실내지도 정보를 제공하는 웹 에플리케이션 입니다.<br> 
+
+
+## 화면 구성 💻
 ![홈페이지](https://github.com/user-attachments/assets/ff725a69-7c54-4dad-a3ee-5dafec2f561e)
 ![map ](https://github.com/user-attachments/assets/25d3e779-8217-4464-a134-b60a92daa542)
 ![편의시설](https://github.com/user-attachments/assets/54cb5ebe-2a84-4744-9aa3-d1cfadfcf372)
