@@ -13,10 +13,9 @@
  - [프로젝트 목적](#프로젝트-목적)
  - [화면 구성](#화면-구성)
  -  [기술적 선택](#기술적-선택)
-    - [에러 처리](#에러처리)
+ -  [주요 기능](#주요-기능)
 
- - [CI/CD](#cicd)
-    - [무중단 배포](#무중단-배포)
+
 
 
 ## 📃개요
@@ -96,11 +95,12 @@
 
 
 
-## :bulb: 주요 기능
+## 주요 기능
 <ul>
-	<li>전남대학교 광주캠퍼스 지도 확인</li>
+	<li>전남대학교 광주캠퍼스 지도, 실내지도 확인</li>
 	<li>층 별로 내부 구조를 확인 할 수 있도록 설정</li>
-	<li>복사기 위치, 편의점 위치 확인</li>
+	<li>건물 내의 편의시설 위치 정보 제공</li>
+	<li>복사기 위치, 편의점, 주차장 위치 확인</li>
 </ul>
 	
 ## :clipboard: Project Member
@@ -149,27 +149,11 @@
 <td width="100" align="center">채민식</td>
 <td width="250" align="center">BE, FE</td>
 <td width="150" align="center">	
-	<a href="https://github.com/minsik" target="_blank"><img src="https://img.shields.io/badge/minsik-655ced?style=social&logo=github"/></a>
+	<a href="https://github.com/wrd1stProgrammer" target="_blank"><img src="https://img.shields.io/badge/minsik-655ced?style=social&logo=github"/></a>
 </td>
 </tr>
 </tbody>
 </table>
-
-## 📚 STACKS
-<p>
-  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
-  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
-  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
-</p>
-<p>
-  <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> 
-  <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
-</p>
-<p>
-  <img src="https://img.shields.io/badge/amazonaws-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white"> 
-  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-</p>
-
 
 
 
