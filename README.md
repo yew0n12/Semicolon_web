@@ -24,13 +24,14 @@
 
 ## 개발 환경
 
-![IntelliJ](https://img.shields.io/badge/github-606060?style=fat&logo=github)&nbsp;![IntelliJ](https://img.shields.io/badge/vscode-blue?style=flat&logo=VisualStudioCode)&nbsp;![IntelliJ](https://img.shields.io/badge/Docker-ADD8E6?style=flat&logo=docker)&nbsp;![IntelliJ](https://img.shields.io/badge/DBeaver-blue?style=flat)
+![GitHub](https://img.shields.io/badge/github-606060?style=flat&logo=github) 
+![VSCode](https://img.shields.io/badge/vscode-blue?style=flat&logo=VisualStudioCode) 
+![Windows 11](https://img.shields.io/badge/windows%2011-0078D6?style=flat&logo=windows)
 
- - windows 11
- - Visual Studio Code
- - GitHub
- - 
- - DBeaver
+- Windows 11
+- Visual Studio Code
+- GitHub
+
 
 
 ## 화면 구성 💻
