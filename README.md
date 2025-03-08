@@ -22,6 +22,16 @@
 ## 📃개요
 **전남대학교 실내지도**는 학교 학생들이 찾고자하는 건물과 강의실의 실내지도 정보를 제공하는 웹 에플리케이션 입니다.<br> 
 
+## 개발 환경
+
+![IntelliJ](https://img.shields.io/badge/github-606060?style=fat&logo=github)&nbsp;![IntelliJ](https://img.shields.io/badge/vscode-blue?style=flat&logo=VisualStudioCode)&nbsp;![IntelliJ](https://img.shields.io/badge/Docker-ADD8E6?style=flat&logo=docker)&nbsp;![IntelliJ](https://img.shields.io/badge/DBeaver-blue?style=flat)
+
+ - windows 11
+ - Visual Studio Code
+ - GitHub
+ - 
+ - DBeaver
+
 
 ## 화면 구성 💻
 ![홈페이지](https://github.com/user-attachments/assets/ff725a69-7c54-4dad-a3ee-5dafec2f561e)
