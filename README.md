@@ -59,6 +59,9 @@
 **라이브러리**
 - [KakaoMaps API](https://apis.map.kakao.com/)
 
+## 인프라구조
+![인프라구조](https://drive.google.com/file/d/1GoL2FBCNljpnODXLMHgKCYkA_rLqg71S/view?usp=drive_link)
+
 
 
 ## 화면 구성 💻
