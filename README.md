@@ -34,14 +34,10 @@
 
 ## 사용 기술
 
-![Node.js](https://img.shields.io/badge/Node.js-18-339933?style=flat&logo=nodedotjs)  
-![Express.js](https://img.shields.io/badge/Express.js-4.18-000000?style=flat&logo=express)  
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5)  
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3)  
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript)  
+![Node.js](https://img.shields.io/badge/Node.js-18-339933?style=flat&logo=nodedotjs)  ![Express.js](https://img.shields.io/badge/Express.js-4.18-000000?style=flat&logo=express)  
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5)  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3)  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript)  
 ![MySQL](https://img.shields.io/badge/MySQL-8.0.28-4479A1?style=flat&logo=mysql)  
-![AWS EC2](https://img.shields.io/badge/AWS%20EC2-FF9900?style=flat&logo=amazonec2)  
-![AWS S3](https://img.shields.io/badge/AWS%20S3-FF9900?style=flat&logo=amazons3)  
+![AWS EC2](https://img.shields.io/badge/AWS%20EC2-FF9900?style=flat&logo=amazonec2)  ![AWS S3](https://img.shields.io/badge/AWS%20S3-FF9900?style=flat&logo=amazons3)  
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat&logo=githubactions)
 
 **백엔드**
